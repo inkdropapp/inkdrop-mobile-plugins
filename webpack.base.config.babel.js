@@ -21,10 +21,7 @@ export default function initConfig(opts = {}) {
   return {
     context: path.resolve(__dirname, './src'),
     entry: {
-      math: [
-        'plugin-loader!math',
-        'math/styles/markdown-math.less'
-      ]
+      math: ['plugin-loader!math', 'math/styles/markdown-math.less']
     },
     output: {
       path: path.resolve(__dirname, 'lib'),
@@ -89,9 +86,7 @@ export default function initConfig(opts = {}) {
         }
       ]
     },
-    plugins: [
-      new MiniCssExtractPlugin({ filename: '[name].css' })
-    ],
+    plugins: [new MiniCssExtractPlugin({ filename: '[name].css' })],
     externals: {
       react: 'modules.react',
       'prop-types': 'modules["prop-types"]',
@@ -99,10 +94,7 @@ export default function initConfig(opts = {}) {
       inkdrop: 'modules.inkdrop'
     },
     resolveLoader: {
-      modules: [
-        'node_modules',
-        path.resolve(__dirname, 'loaders')
-      ]
+      modules: ['node_modules', path.resolve(__dirname, 'loaders')]
     }
   }
 }
