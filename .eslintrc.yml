@@ -1,10 +1,8 @@
 root: true
 plugins:
-  - react
   - flowtype
   - prettier
 extends:
-  - plugin:react/recommended
   - plugin:flowtype/recommended
   - plugin:prettier/recommended
 parser: babel-eslint

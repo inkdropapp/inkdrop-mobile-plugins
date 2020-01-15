@@ -1,28 +1,13 @@
 import path from 'path'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { getPackageEntryPoints } from './utils/package-dependency'
 
 export default function initConfig(opts = {}) {
   const { isDebug } = opts
 
-  function enableMiniCssExtractPluginForDebug(loaders) {
-    if (isDebug) {
-      return ['style-loader', ...loaders]
-    } else {
-      return [
-        {
-          loader: MiniCssExtractPlugin.loader,
-          options: {}
-        },
-        ...loaders
-      ]
-    }
-  }
-
   return {
     context: path.resolve(__dirname, './src'),
-    entry: {
-      math: ['plugin-loader!math', 'math/styles/markdown-math.less']
-    },
+    entry: getPackageEntryPoints(),
     output: {
       path: path.resolve(__dirname, 'lib'),
       filename: '[name].js'
