@@ -7,12 +7,17 @@ global.modules = {
 
 global.window = {}
 
+global.window.inkdrop = {
+  packages: {}
+}
+
 test.serial.cb('math', t => {
-  global.inkdropRegisterPlugin = (p) => {
+  global.window.inkdrop.packages.setPackageMainModule = (name, p) => {
+    t.is(name, 'math')
     t.is(p instanceof Object, true)
     t.is(typeof p.activate, 'function')
     t.is(typeof p.deactivate, 'function')
-		t.end();
+    t.end()
   }
 
   require('../lib/math')
