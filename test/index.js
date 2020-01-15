@@ -5,10 +5,10 @@ global.modules = {
   'prop-types': require('prop-types')
 }
 
-global.window = {}
-
+// inkdrop app mock
 global.window.inkdrop = {
-  packages: {}
+  packages: {},
+  commands: {}
 }
 
 test.serial.cb('math', t => {
@@ -21,4 +21,16 @@ test.serial.cb('math', t => {
   }
 
   require('../lib/math')
+})
+
+test.serial.cb('sequence-diagrams', t => {
+  global.window.inkdrop.packages.setPackageMainModule = (name, p) => {
+    t.is(name, 'sequence-diagrams')
+    t.is(p instanceof Object, true)
+    t.is(typeof p.activate, 'function')
+    t.is(typeof p.deactivate, 'function')
+    t.end()
+  }
+
+  require('../lib/sequence-diagrams')
 })

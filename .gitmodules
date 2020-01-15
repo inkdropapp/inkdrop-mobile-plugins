@@ -1,3 +1,6 @@
 [submodule "packages/math"]
 	path = packages/math
 	url = https://github.com/inkdropapp/inkdrop-math.git
+[submodule "packages/sequence-diagrams"]
+	path = packages/sequence-diagrams
+	url = https://github.com/inkdropapp/inkdrop-sequence-diagrams.git

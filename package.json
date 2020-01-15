@@ -30,6 +30,7 @@
     "ava": "^2.4.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "browser-env": "^3.3.0",
     "core-js": "^3.6.2",
     "css-loader": "^3.4.1",
     "eslint": "^6.8.0",
@@ -44,9 +45,15 @@
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "sequence-diagrams": "file:packages/sequence-diagrams",
     "string-replace-loader": "^2.2.0",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
+  },
+  "ava": {
+    "require": [
+      "./test/_setup-browser-env.js"
+    ]
   }
 }
