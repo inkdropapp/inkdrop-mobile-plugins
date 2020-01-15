@@ -9,7 +9,7 @@
     "build": "npm run clean && npm run build:plugins && npm run build:index",
     "build:plugins": "webpack --progress --config webpack.prod.config.babel.js && npm run build:index",
     "build:index": "babel-node ./tools/build-index.js",
-    "clean": "rm -rf ./webeditor",
+    "clean": "rm -rf ./lib",
     "lint": "eslint src"
   },
   "keywords": [
