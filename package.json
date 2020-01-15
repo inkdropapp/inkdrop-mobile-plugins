@@ -10,7 +10,8 @@
     "build:plugins": "webpack --progress --config webpack.prod.config.babel.js && npm run build:index",
     "build:index": "babel-node ./tools/build-index.js",
     "clean": "rm -rf ./lib",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "inkdrop"
@@ -55,5 +56,8 @@
     "require": [
       "./test/_setup-browser-env.js"
     ]
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
