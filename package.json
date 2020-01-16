@@ -6,9 +6,10 @@
   "scripts": {
     "test": "ava",
     "dev": "webpack --progress --config webpack.dev.config.babel.js --watch",
+    "dev:server": "webpack-dev-server --progress --config webpack.dev.config.babel.js --port 8001 --host 0.0.0.0",
     "build": "npm run clean && npm run build:plugins && npm run build:index",
     "build:plugins": "webpack --progress --config webpack.prod.config.babel.js && npm run build:index",
-    "build:index": "babel-node ./tools/build-index.js",
+    "build:index": "mkdir -p ./lib && babel-node ./tools/build-index.js",
     "clean": "rm -rf ./lib",
     "lint": "eslint src",
     "prepublishOnly": "npm run build"
@@ -50,7 +51,8 @@
     "string-replace-loader": "^2.2.0",
     "style-loader": "^1.1.2",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
   },
   "ava": {
     "require": [
