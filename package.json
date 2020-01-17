@@ -53,6 +53,7 @@
     "sequence-diagrams": "file:packages/sequence-diagrams",
     "string-replace-loader": "^2.2.0",
     "style-loader": "^1.1.2",
+    "toc": "file:packages/toc",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"

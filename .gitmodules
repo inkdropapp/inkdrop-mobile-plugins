@@ -10,3 +10,6 @@
 [submodule "packages/flowchart"]
 	path = packages/flowchart
 	url = https://github.com/inkdropapp/inkdrop-flowchart.git
+[submodule "packages/toc"]
+	path = packages/toc
+	url = https://github.com/inkdropapp/inkdrop-toc.git

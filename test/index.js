@@ -62,3 +62,15 @@ test.serial.cb('flowchart', t => {
   require('../lib/flowchart')
 })
 
+test.serial.cb('toc', t => {
+  global.window.inkdrop.packages.setPackageMainModule = (name, p) => {
+    t.is(name, 'toc')
+    t.is(p instanceof Object, true)
+    t.is(typeof p.activate, 'function')
+    t.is(typeof p.deactivate, 'function')
+    t.end()
+  }
+
+  require('../lib/toc')
+})
+
