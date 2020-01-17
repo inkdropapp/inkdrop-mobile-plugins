@@ -13,3 +13,6 @@
 [submodule "packages/toc"]
 	path = packages/toc
 	url = https://github.com/inkdropapp/inkdrop-toc.git
+[submodule "packages/breaks"]
+	path = packages/breaks
+	url = https://github.com/inkdropapp/inkdrop-breaks.git

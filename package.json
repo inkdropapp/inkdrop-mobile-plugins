@@ -32,6 +32,7 @@
     "ava": "^2.4.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
+    "breaks": "file:packages/breaks",
     "browser-env": "^3.3.0",
     "core-js": "^3.6.2",
     "css-loader": "^3.4.1",
