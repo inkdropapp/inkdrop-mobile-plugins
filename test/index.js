@@ -2,7 +2,10 @@ import test from 'ava'
 
 global.modules = {
   react: require('react'),
-  'prop-types': require('prop-types')
+  'prop-types': require('prop-types'),
+  inkdrop: {
+    markdownRenderer: {}
+  }
 }
 
 // inkdrop app mock
@@ -34,3 +37,16 @@ test.serial.cb('sequence-diagrams', t => {
 
   require('../lib/sequence-diagrams')
 })
+
+test.serial.cb('markdown-emoji', t => {
+  global.window.inkdrop.packages.setPackageMainModule = (name, p) => {
+    t.is(name, 'markdown-emoji')
+    t.is(p instanceof Object, true)
+    t.is(typeof p.activate, 'function')
+    t.is(typeof p.deactivate, 'function')
+    t.end()
+  }
+
+  require('../lib/markdown-emoji')
+})
+

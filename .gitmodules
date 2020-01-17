@@ -4,3 +4,6 @@
 [submodule "packages/sequence-diagrams"]
 	path = packages/sequence-diagrams
 	url = https://github.com/inkdropapp/inkdrop-sequence-diagrams.git
+[submodule "packages/markdown-emoji"]
+	path = packages/markdown-emoji
+	url = https://github.com/inkdropapp/inkdrop-markdown-emoji.git
