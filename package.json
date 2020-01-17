@@ -40,6 +40,7 @@
     "eslint-plugin-flowtype": "^4.6.0",
     "eslint-plugin-prettier": "^3.1.2",
     "file-loader": "^5.0.2",
+    "flowchart": "file:packages/flowchart",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "markdown-emoji": "file:packages/markdown-emoji",

@@ -7,3 +7,6 @@
 [submodule "packages/markdown-emoji"]
 	path = packages/markdown-emoji
 	url = https://github.com/inkdropapp/inkdrop-markdown-emoji.git
+[submodule "packages/flowchart"]
+	path = packages/flowchart
+	url = https://github.com/inkdropapp/inkdrop-flowchart.git

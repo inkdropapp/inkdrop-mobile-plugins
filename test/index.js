@@ -50,3 +50,15 @@ test.serial.cb('markdown-emoji', t => {
   require('../lib/markdown-emoji')
 })
 
+test.serial.cb('flowchart', t => {
+  global.window.inkdrop.packages.setPackageMainModule = (name, p) => {
+    t.is(name, 'flowchart')
+    t.is(p instanceof Object, true)
+    t.is(typeof p.activate, 'function')
+    t.is(typeof p.deactivate, 'function')
+    t.end()
+  }
+
+  require('../lib/flowchart')
+})
+
