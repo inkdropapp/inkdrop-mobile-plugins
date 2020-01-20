@@ -76,7 +76,8 @@ export default function initConfig(opts = {}) {
       react: 'modules.react',
       'prop-types': 'modules["prop-types"]',
       codemirror: 'modules.codemirror',
-      inkdrop: 'modules.inkdrop'
+      inkdrop: 'modules.inkdrop',
+      electron: JSON.stringify(false)
     },
     resolveLoader: {
       modules: ['node_modules', path.resolve(__dirname, 'loaders')]

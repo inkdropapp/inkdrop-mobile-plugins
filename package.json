@@ -36,6 +36,7 @@
     "browser-env": "^3.3.0",
     "core-js": "^3.6.2",
     "css-loader": "^3.4.1",
+    "embed": "file:packages/embed",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-flowtype": "^4.6.0",

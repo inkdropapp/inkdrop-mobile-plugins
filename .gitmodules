@@ -19,3 +19,6 @@
 [submodule "packages/mermaid"]
 	path = packages/mermaid
 	url = https://github.com/inkdropapp/inkdrop-mermaid.git
+[submodule "packages/embed"]
+	path = packages/embed
+	url = https://github.com/inkdropapp/inkdrop-embed.git
