@@ -2,7 +2,7 @@
   "name": "inkdrop-mobile-plugins",
   "version": "0.1.0",
   "description": "Plugins for Inkdrop Mobile",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "ava",
     "dev": "webpack --progress --config webpack.dev.config.babel.js --watch",
