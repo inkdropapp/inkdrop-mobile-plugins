@@ -16,3 +16,6 @@
 [submodule "packages/breaks"]
 	path = packages/breaks
 	url = https://github.com/inkdropapp/inkdrop-breaks.git
+[submodule "packages/mermaid"]
+	path = packages/mermaid
+	url = https://github.com/inkdropapp/inkdrop-mermaid.git

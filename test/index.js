@@ -74,3 +74,15 @@ test.serial.cb('toc', t => {
   require('../lib/toc')
 })
 
+test.serial.cb('mermaid', t => {
+  global.window.inkdrop.packages.setPackageMainModule = (name, p) => {
+    t.is(name, 'mermaid')
+    t.is(p instanceof Object, true)
+    t.is(typeof p.activate, 'function')
+    t.is(typeof p.deactivate, 'function')
+    t.end()
+  }
+
+  require('../lib/mermaid')
+})
+

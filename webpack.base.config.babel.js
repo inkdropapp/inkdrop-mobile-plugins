@@ -80,6 +80,11 @@ export default function initConfig(opts = {}) {
     },
     resolveLoader: {
       modules: ['node_modules', path.resolve(__dirname, 'loaders')]
+    },
+    resolve: {
+      alias: {
+        mermaid: 'mermaid/dist/mermaid'
+      }
     }
   }
 }

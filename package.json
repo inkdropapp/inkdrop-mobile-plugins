@@ -44,6 +44,7 @@
     "flowchart": "file:packages/flowchart",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
+    "mermaid": "file:packages/mermaid",
     "markdown-emoji": "file:packages/markdown-emoji",
     "marked": "^0.8.0",
     "math": "file:packages/math",
