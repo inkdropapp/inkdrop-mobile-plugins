@@ -5,6 +5,7 @@ import {
   getPackageDependencies,
   getPackageStyleSheets
 } from '../utils/package-dependency'
+import { getRepository } from '../utils/package'
 
 const plugins = getPackageDependencies().map(pack => {
   const readmePath = path.join(
@@ -20,6 +21,7 @@ const plugins = getPackageDependencies().map(pack => {
     readme = marked(md)
   }
   const isStylesheetAvailable = getPackageStyleSheets(pack).length > 0
+  const repository = getRepository(pack)
 
   return {
     ...pack,
@@ -27,7 +29,8 @@ const plugins = getPackageDependencies().map(pack => {
     styleSheets: isStylesheetAvailable ? [`${pack.name}.css`] : [],
     readme,
     devDependencies: undefined,
-    scripts: undefined
+    scripts: undefined,
+    repository
   }
 })
 

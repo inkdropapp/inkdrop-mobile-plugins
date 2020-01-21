@@ -1,27 +1,29 @@
 import test from 'ava'
 import plugins from '../src/index'
 
-test('description should not include "plugin" word', t => {
+test('package metadata', t => {
   for (const p of plugins) {
-    const i = p.description.indexOf('plugin')
-    if (i >= 0) {
-      t.fail(`'${p.name}' has "plugin" word in its description`)
-      return
-    }
-  }
-  t.pass()
-})
+    t.is(
+      typeof p.repository,
+      'string',
+      `'${p.name}' must have "repository" field`
+    )
 
-test('readme should not include "plugin" word', t => {
-  for (const p of plugins) {
-    if (typeof p.readme !== 'string') {
-      t.fail(`'${p.name}' must have 'README-mobile.md' document`)
-    }
-    const i = p.readme.indexOf('plugin')
-    if (i >= 0) {
-      t.fail(`'${p.name}' has "plugin" word in its readme`)
-      return
-    }
+    t.true(
+      p.description.indexOf('plugin') < 0,
+      `'${p.name}' must not have "plugin" word in its description`
+    )
+
+    t.is(
+      typeof p.readme,
+      'string',
+      `'${p.name}' must have 'README-mobile.md' document`
+    )
+
+    t.true(
+      p.readme.indexOf('plugin') < 0,
+      `'${p.name}' must not have "plugin" word in its readme`
+    )
   }
   t.pass()
 })
