@@ -2,6 +2,23 @@
 
 ## How to add your plugin
 
+### Update your plugin for mobile
+
+#### Add `README-mobile.md`
+
+It is a documentation for mobile.
+Basically you can reuse your README.md but you have to remove sections for desktop like "How to install".
+
+#### Remove "plugin" words from your plugin description
+
+You can not use "plugin" or any words like "extension" in your package description or readme.
+Because your plugin will be displayed as one of renderer options like so:
+
+![Screenshot](https://github.com/inkdropapp/inkdrop-mobile-plugins/blob/master/docs/plugin-settings-ss.png?raw=true)
+
+This is a workaround to avoid violating Apple's guideline.
+Read [the blogpost](https://blog.inkdrop.info/a-promising-idea-towards-supporting-plugins-for-ios-app-5f7803715be7) for more detail on this workaround.
+
 ### Add submodule
 
 Run the following command:
@@ -32,7 +49,23 @@ npm run build
 
 ### Test
 
-Add a test for your plugin to `test/index.js`.
+Add a test for your plugin to `test/index.js` to make sure it gets loaded properly.
+
+For example:
+
+```js
+test.serial.cb("mermaid", t => {
+  global.window.inkdrop.packages.setPackageMainModule = (name, p) => {
+    t.is(name, "mermaid");
+    t.is(p instanceof Object, true);
+    t.is(typeof p.activate, "function");
+    t.is(typeof p.deactivate, "function");
+    t.end();
+  };
+
+  require("../lib/mermaid");
+});
+```
 
 ## How to debug your plugin
 
