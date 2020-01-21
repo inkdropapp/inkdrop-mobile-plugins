@@ -12,7 +12,7 @@ const plugins = getPackageDependencies().map(pack => {
     '..',
     'packages',
     pack.name,
-    'README.md'
+    'README-mobile.md'
   )
   let readme = undefined
   if (fs.existsSync(readmePath)) {

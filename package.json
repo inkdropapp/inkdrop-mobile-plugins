@@ -70,6 +70,7 @@
   },
   "ava": {
     "require": [
+      "@babel/register",
       "./test/_setup-browser-env.js"
     ]
   },
