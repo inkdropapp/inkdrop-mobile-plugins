@@ -4,7 +4,7 @@
   "description": "Plugins for Inkdrop Mobile",
   "main": "lib/index.js",
   "scripts": {
-    "test": "ava",
+    "test": "ava --timeout=1m",
     "dev": "webpack --progress --config webpack.dev.config.babel.js --watch",
     "dev:server": "webpack-dev-server --progress --config webpack.dev.config.babel.js --port 8001 --host 0.0.0.0",
     "build": "npm run clean && npm run build:plugins && npm run build:index",
