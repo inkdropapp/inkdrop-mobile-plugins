@@ -1,4 +1,5 @@
 import path from 'path'
+import fs from 'fs'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { getPackageEntryPoints } from './utils/package-dependency'
 
@@ -18,7 +19,14 @@ export default function initConfig(opts = {}) {
           test: /\.js$/,
           exclude: /(node_modules)/,
           use: {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-react'],
+              plugins: [
+                '@babel/plugin-proposal-object-rest-spread',
+                '@babel/plugin-proposal-class-properties'
+              ]
+            }
           }
         },
         {
@@ -81,11 +89,6 @@ export default function initConfig(opts = {}) {
     },
     resolveLoader: {
       modules: ['node_modules', path.resolve(__dirname, 'loaders')]
-    },
-    resolve: {
-      alias: {
-        mermaid: 'mermaid/dist/mermaid'
-      }
     }
   }
 }
