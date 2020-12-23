@@ -86,3 +86,14 @@ test.serial.cb('mermaid', t => {
   require('../lib/mermaid')
 })
 
+test.serial.cb('wiki_links', (t) => {
+  global.window.inkdrop.packages.setPackageMainModule = (name, p) => {
+    t.is(name, 'wiki_links')
+    t.is(p instanceof Object, true)
+    t.is(typeof p.activate, "function")
+    t.is(typeof p.deactivate, "function")
+    t.end()
+  }
+
+  require('../lib/wiki_links')
+})
