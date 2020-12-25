@@ -8,9 +8,12 @@
     "dev": "webpack --progress --config webpack.dev.config.babel.js --watch",
     "dev:server": "webpack-dev-server --progress --config webpack.dev.config.babel.js --port 8001 --host 0.0.0.0",
     "build": "npm run clean && npm run build:plugins && npm run build:index",
-    "build:plugins": "webpack --progress --config webpack.prod.config.babel.js && npm run build:index",
+    "build:plugins": "webpack --progress --config webpack.prod.config.babel.js",
     "build:index": "mkdir -p ./lib && babel-node ./tools/build-index.js",
     "clean": "rm -rf ./lib",
+    "winbuild": "npm run winclean && npm run build:plugins && npm run winbuild:index",
+    "winbuild:index": "babel-node tools/build-index.js",
+    "winclean": "rmdir /s /q lib",
     "lint": "eslint src",
     "prepublishOnly": "npm run build"
   },
@@ -67,7 +70,8 @@
     "toc": "file:packages/toc",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "wiki_links": "file:packages/wiki_links"
   },
   "ava": {
     "require": [
