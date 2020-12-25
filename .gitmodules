@@ -24,4 +24,4 @@
 	url = https://github.com/inkdropapp/inkdrop-embed.git
 [submodule "packages/wiki_links"]
 	path = packages/wiki_links
-	url = git@github.com:ryanpcmcquen/inkdrop_wiki_links.git
+	url = https://github.com/ryanpcmcquen/inkdrop_wiki_links.git
