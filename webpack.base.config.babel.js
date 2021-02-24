@@ -1,5 +1,4 @@
 import path from 'path'
-import fs from 'fs'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { getPackageEntryPoints } from './utils/package-dependency'
 
@@ -49,7 +48,9 @@ export default function initConfig(opts = {}) {
           use: [
             {
               loader: MiniCssExtractPlugin.loader,
-              options: {}
+              options: {
+                publicPath: './'
+              }
             },
             {
               loader: 'css-loader',
@@ -75,7 +76,10 @@ export default function initConfig(opts = {}) {
         },
         {
           test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-          loader: 'file-loader?name=[name].[hash].[ext]'
+          loader: 'file-loader',
+          options: {
+            name: '[name].[hash].[ext]'
+          }
         }
       ]
     },

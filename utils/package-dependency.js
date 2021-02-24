@@ -29,7 +29,10 @@ export function getPackageEntryPoints() {
 
 export function getPackageEntryPoint(pack) {
   const mainJsPath = path.resolve('.', 'packages', pack.name, pack.main)
-  return [`plugin-loader!${mainJsPath}`, ...getPackageStyleSheets(pack)]
+  return [
+    `plugin-loader!${mainJsPath}?name=${pack.name}`,
+    ...getPackageStyleSheets(pack)
+  ]
 }
 
 export function getPackageStyleSheets(pack) {

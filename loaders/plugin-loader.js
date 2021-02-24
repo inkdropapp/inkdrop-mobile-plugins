@@ -1,5 +1,8 @@
+import { parseQuery } from 'loader-utils'
+
 export default function(source) {
-  const name = this._module.issuer.name
+  const query = parseQuery(this.resourceQuery)
+  const name = query.name
 
   return `
     var module = {};
