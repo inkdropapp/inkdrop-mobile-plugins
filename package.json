@@ -45,7 +45,7 @@
     "core-js": "^3.6.4",
     "css-loader": "^5.0.2",
     "embed": "file:packages/embed",
-    "eslint": "^7.20.0",
+    "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-flowtype": "^5.3.0",
     "eslint-plugin-prettier": "^3.3.1",
